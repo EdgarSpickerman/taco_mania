@@ -1,26 +1,36 @@
-<p>Available Tacos to be consumed</p>
-{{#each results}}
-  {{#unless this.devoured}}
-  <form>
-    <input type="text" name="devoured" value= 1>
-    <input type="text" name="id" value={{this.id}}>
-    <label>{{this.name}}</label>
-    <button class="consume" type="submit">Devour Taco?</button>
-  </form>
-  {{/unless}}
-{{/each}}
+<div class="clear center-text">
+  <div id="not-consumed" class="float m-2 section-container">
+    <h3>Available Tacos to be consumed</h3>
+    {{#each results}}
+      {{#unless this.devoured}}
+      <form>
+        <input type="text" name="devoured" value= 1 class="hide">
+        <input type="text" name="id" value={{this.id}} class="hide">
+        <label>{{this.name}}</label>
+        <button class="consume" type="submit">Devour Taco?</button>
+      </form>
+      {{/unless}}
+    {{/each}}
+  </div>
 
-<p>Devoured Tacos</p>
-<ul>
-  {{#each results}}
-    {{#if this.devoured}}
-      <li> The {{this.name}} taco has already been consumed.</li>
-    {{/if}}
-  {{/each}}
-</ul>
+  <div class="float m-2 section-container">
+    <img id="taco-img" src="./img/taco.png" alt="picture of taco">
+  </div>
 
-<form action="/" method="post">
-  <textarea name="name" cols="30" rows="10"></textarea>
-  <button type="submit">submit</button>
-  <label for="name">Please enter a taco you would like to eat. Then click "Submit".</label>
+  <div id="consumed" class="float m-2 section-container">
+    <h3>Devoured Tacos</h3>
+    <ul>
+      {{#each results}}
+        {{#if this.devoured}}
+          <li> The {{this.name}} taco has already been consumed.</li>
+        {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+</div>
+
+<form action="/" method="post" class="center-text">
+  <textarea name="name" cols="30" rows="10" class="block center-content"></textarea>
+  <button type="submit" class="block center-content">submit</button>
+  <label for="name" class="block">Please enter a taco you would like to eat. Then click "Submit".</label>
 </form>

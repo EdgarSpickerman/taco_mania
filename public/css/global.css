@@ -1,0 +1,36 @@
+*{
+  box-sizing: border-box;
+}
+.block{
+  display: block;
+}
+.clear:after{
+  display: table;
+  clear: both;
+  content: "";
+}
+.center-content{
+  margin-left: auto;
+  margin-right: auto;
+}
+.center-text{
+  text-align: center;
+}
+.float{
+  float: left;
+}
+.hide{
+  position: absolute;
+  top: -9999px;
+  left: -9999px
+}
+.m-2{
+  margin: 2%;
+}
+.section-container{
+  width: 29%;
+}
+#taco-img{
+  width: 100%;
+  height: 100%;
+}
