@@ -7,7 +7,7 @@
         <input type="text" name="devoured" value= 1 class="hide">
         <input type="text" name="id" value={{this.id}} class="hide">
         <label>{{this.name}}</label>
-        <button class="consume" type="submit">Devour Taco?</button>
+        <button class="consume btn" type="submit">Devour Taco?</button>
       </form>
       {{/unless}}
     {{/each}}
@@ -31,6 +31,6 @@
 
 <form action="/" method="post" class="center-text">
   <textarea name="name" cols="30" rows="10" class="block center-content"></textarea>
-  <button type="submit" class="block center-content">submit</button>
+  <button type="submit" class="block center-content btn">submit</button>
   <label for="name" class="block">Please enter a taco you would like to eat. Then click "Submit".</label>
 </form>

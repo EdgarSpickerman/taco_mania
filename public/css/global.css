@@ -4,6 +4,13 @@
 .block{
   display: block;
 }
+.btn{
+  background-color: blue;
+  border: 0px;
+  padding: 1%;
+  color: #fff;
+  border-radius: 10%;
+}
 .clear:after{
   display: table;
   clear: both;
