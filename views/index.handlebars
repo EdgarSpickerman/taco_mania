@@ -1,5 +1,26 @@
-<h1>this is the index page being rendered</h1>
-
+<p>Available Tacos to be consumed</p>
 {{#each results}}
-  <p>id: {{this.id}} name: {{this.name}} devoured: {{this.devoured}}</p>
+  {{#unless this.devoured}}
+  <form>
+    <input type="text" name="devoured" value="true">
+    <input type="text" name="id" value={{this.id}}>
+    <label>{{this.name}}</label>
+    <button class="consume" type="submit">Devour Taco?</button>
+  </form>
+  {{/unless}}
 {{/each}}
+
+<p>Devoured Tacos</p>
+<ul>
+  {{#each results}}
+    {{#if this.devoured}}
+      <li> The {{this.name}} taco has already been consumed.</li>
+    {{/if}}
+  {{/each}}
+</ul>
+
+<form action="/" method="post">
+  <textarea name="name" cols="30" rows="10"></textarea>
+  <button type="submit">submit</button>
+  <label for="name">Please enter a taco you would like to eat. Then click "Submit".</label>
+</form>
