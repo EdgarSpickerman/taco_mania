@@ -14,10 +14,14 @@ module.exports = {
     const opts = [tblName];
     return query(statement, opts);
   },
-  insertOne: (tblName,data)=>{
+  insertOne: (tblName, data) => {
     const statement = 'insert into ?? set ?';
-    const opts = [tblName,data];
+    const opts = [tblName, data];
     return query(statement, opts);
   },
-  updateOne: () => "",
+  updateOne: (tblName, id, data) => {
+    const statement = 'update ?? set ? where id=?';
+    const opts = [tblName, data, id];
+    return query(statement, opts);
+  },
 }

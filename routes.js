@@ -18,5 +18,11 @@ router
       .then(() => res.redirect("/"))
       .catch(err => next(err))
   })
+  .put("/tacos/:id", (req, res, next) => {
+    const {id,...devoured } = req.body;
+    tacoController.update(id, devoured)
+      .then(data => res.json(data))
+      .catch(err => res.json(err))
+  })
 
 module.exports = router;

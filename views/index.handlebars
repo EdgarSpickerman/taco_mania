@@ -2,7 +2,7 @@
 {{#each results}}
   {{#unless this.devoured}}
   <form>
-    <input type="text" name="devoured" value="true">
+    <input type="text" name="devoured" value= 1>
     <input type="text" name="id" value={{this.id}}>
     <label>{{this.name}}</label>
     <button class="consume" type="submit">Devour Taco?</button>

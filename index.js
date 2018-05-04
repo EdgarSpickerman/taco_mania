@@ -13,6 +13,7 @@ const webServer = express();
 webServer
   .engine("handlebars",exphbr({defaultLayout: "main"}))
   .set("view engine","handlebars")
+  .use(express.static("public"))
   .use(bodyParser.urlencoded({extended:false}))
   .use(routes)
   .use((req,res,next)=>res.sendStatus(404))
