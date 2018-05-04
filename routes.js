@@ -11,7 +11,12 @@ router
   .get("/", (req, res, next) => {
     tacoController.getAll()
       .then(data => showView(data, res, "index.handlebars"))
-      .catch(err => console.log(err))
+      .catch(err => next(err))
+  })
+  .post("/", (req, res, next) => {
+    tacoController.make(req.body)
+      .then(() => res.redirect("/"))
+      .catch(err => next(err))
   })
 
 module.exports = router;
